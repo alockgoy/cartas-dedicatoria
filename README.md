@@ -1,75 +1,64 @@
-# React + TypeScript + Vite
+# 🚀 Proyecto React — Práctica y aprendizaje
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación desarrollada con **React** cuyo principal objetivo es **practicar, experimentar y aprender**.
 
-Currently, two official plugins are available:
+No pretende ser un proyecto perfecto, ni está construido siguiendo necesariamente las mejores prácticas que utilizaría un desarrollador con experiencia. De hecho, todo lo contrario: este proyecto forma parte de mi proceso de aprendizaje con React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧑‍💻 Sobre el proyecto
 
-## React Compiler
+Tengo **poca experiencia con React** y estoy utilizando este proyecto como una forma de aprender el framework mientras construyo algo funcional.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Por este motivo, es importante tener en cuenta que el código puede contener:
 
-## Expanding the ESLint configuration
+- Estructuras mejorables.
+- Lógicas que podrían resolverse de una forma más sencilla o eficiente.
+- Componentes que podrían estar mejor organizados.
+- Código repetido.
+- Decisiones de arquitectura que probablemente cambiarán en el futuro.
+- Errores o comportamientos inesperados.
+- Soluciones que actualmente funcionan, pero que quizá no sean las más adecuadas.
+- Prácticas que iré modificando a medida que adquiera más conocimientos.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+El objetivo principal de este proyecto no es demostrar que sé utilizar React perfectamente, sino **aprender utilizándolo**.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📚 Un proyecto para aprender
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Este repositorio debe entenderse como un **proyecto de práctica**.
 
-```
+Es bastante probable que algunas de las decisiones que tome al principio terminen siendo modificadas posteriormente.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+De hecho, **esa es parte de la finalidad del proyecto**.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚠️ Expectativas sobre el código
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Si estás revisando este proyecto, ten en cuenta que **no soy un desarrollador experimentado en React**.
 
-```
+Es posible encontrar código que, desde un punto de vista más profesional, podría mejorarse considerablemente.
+
+## 🔄 Evolución del proyecto
+
+Una de las cosas que más me interesa de este proyecto es poder observar su evolución.
+
+A medida que vaya aprendiendo React y adquiriendo más experiencia, iré revisando partes del código y mejorando aspectos como:
+
+- La estructura de carpetas.
+- La arquitectura de los componentes.
+- La separación de responsabilidades.
+- La reutilización de código.
+- La gestión del estado.
+- La lógica de la aplicación.
+- El manejo de errores.
+- El rendimiento.
+- La legibilidad del código.
+- Las convenciones y buenas prácticas.
+- La experiencia de usuario.
+
+Es posible que algunas partes del proyecto sean **reescritas por completo** en el futuro.
+
+### 📝 Estado del proyecto
+
+**Proyecto de aprendizaje — En desarrollo**
+
+No debe considerarse un proyecto terminado ni una referencia de buenas prácticas en React.
+

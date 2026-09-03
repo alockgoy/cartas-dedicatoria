@@ -1,0 +1,15 @@
+.cabecera{
+    background-color: rgb(141, 130, 27);
+    border-style: solid;
+    border-radius: 45px; /* Lo que le hicieron a los menús en Windows 11 */
+}
+
+/* El nav que es hijo directo de header */
+header>nav{
+    text-align: left; /* El texto empieza por la izquierda (por defecto está centrado) */
+    margin-left: 3%; /* Un poco de separación para no superponerse al borde redondeado */
+}
+
+h1{
+    font-size: 1.9em; /* El tamaño por defecto se me antoja muy grande */
+}
