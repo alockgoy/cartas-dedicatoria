@@ -50,8 +50,37 @@ function Letter({ setSaveStatus }: LetterStatus) {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 >
-
             </textarea>
+
+            {/**
+             *  Input para la foto
+             *      Márgen superior de 1
+             *      Posicionamiento a la izquierda
+             */}
+            <form className="mt-1 flex justify-start">
+                <input 
+                type="file" 
+                placeholder="Escoge una foto"
+                
+                />
+            </form>
+
+            {/**
+             *  Input para la firma
+             *      Márgenes superior e izquierdo de 1
+             *      Posicionamiento en la derecha
+             *      
+             */}
+            <form className="mt-1 flex justify-end">
+                <label htmlFor="name">Firmado por: </label>
+                <input 
+                    className="ml-1" 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    placeholder="Escribe tu nombre" 
+                    required />
+            </form>
         </main>
     );
 

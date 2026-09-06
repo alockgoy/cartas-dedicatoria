@@ -39,7 +39,7 @@ function Header({ title, saveStatus }: HeaderStatus) {
              */}
             <nav className="ml-6">
                 
-                {saveStatus === 'guardado' ? '💾 Guardado' : '💾 Guardando...'}
+                {saveStatus === 'guardado' ? '💾 Guardado' : '✍ Guardando...'}
 
             </nav>
         </header>

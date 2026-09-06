@@ -1,9 +1,6 @@
-import React, { useState } from "react"; // Importar "useState"
+
 
 function Footer() {
-
-    // Crea un estado "nav" que empieza en false y permite cambiarlo con "setNav".
-    const [nav, setNav] = useState(false);
 
     return (
 
