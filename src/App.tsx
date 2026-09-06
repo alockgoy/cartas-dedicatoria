@@ -5,15 +5,17 @@ import { useState } from 'react'
 //import './App.css'
 import Header from './components/Header'; // Importar el componente de cabecera
 import Footer from './components/Footer'; // Importar el componente de pie de página
+import Letter from './components/Letter'; // Importar el componente de la carta
 
 function App() {
 
+  // Alternar texto de la cabecera entre "guardando" y "guardado"
+  const [saveStatus, setSaveStatus] = useState<'guardado' | 'guardando'>('guardado');
+
   return (
     <>
-      <Header title="Cartas" />
-      <main className="flex-grow">
-        {/** Aquí irá el Main cuando lo desarrolle */}
-      </main>
+      <Header title="Cartas" saveStatus={saveStatus} />
+      <Letter setSaveStatus={setSaveStatus} />
       <Footer />
     </>
   )
