@@ -62,3 +62,11 @@ Es posible que algunas partes del proyecto sean **reescritas por completo** en e
 
 No debe considerarse un proyecto terminado ni una referencia de buenas prácticas en React.
 
+#### Créditos
+This favicon was generated using the following font:
+
+- Font Title: Leckerli One
+- Font Author: undefined
+- Font Source: https://fonts.gstatic.com/s/leckerlione/v22/V8mCoQH8VCsNttEnxnGQ-1itLZxcBtItFw.ttf
+- Font License: undefined)
+

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; // Importar "useState"
 //import "./Header.css"; // Importar el CSS específico del header
 
 function Header({ title }) {
