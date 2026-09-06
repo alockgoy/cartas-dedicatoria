@@ -29,6 +29,30 @@ function Letter({ setSaveStatus }: LetterStatus) {
         return () => clearTimeout(timeout);
     }, [text, setSaveStatus]);
 
+    // Comprobar que el archivo subido sea una foto
+    const [photoError, setPhotoError] = useState('');
+
+    function verifyPhoto(e: React.ChangeEvent<HTMLInputElement>){
+        
+        // Obtener el archivo subido al input
+        const file = e.target.files?.[0];
+
+        // Comprobar que hay un archivo subido
+        if (!file) {
+            return;
+        }
+
+        // Comprobar que el archivo subido es una foto
+        if (!file.type.startsWith('image/')) {
+            setPhotoError('El archivo subido no es una foto');
+            e.target.value = '';
+            return;
+        }
+
+        // Si no se han cumplido las condiciones anteriores, es que SÍ se ha subido una foto
+        setPhotoError('');
+    }
+
     return (
         /**
          * Sección principal
@@ -56,22 +80,27 @@ function Letter({ setSaveStatus }: LetterStatus) {
              *  Input para la foto
              *      Márgen superior de 1
              *      Posicionamiento a la izquierda
+             *      Mensaje de error si el archivo subido NO es una foto
              */}
-            <form className="mt-1 flex justify-start">
+            <div className="mt-1 flex justify-start">
                 <input 
                 type="file" 
-                placeholder="Escoge una foto"
-                
+                accept="image/*"
+                onChange={verifyPhoto}
                 />
-            </form>
+                {photoError && (
+                    <p className="text-red-600 text-sm mt-1 ml-1">{photoError}</p>
+                )}
+            </div>
 
             {/**
              *  Input para la firma
              *      Márgenes superior e izquierdo de 1
              *      Posicionamiento en la derecha
+             *      Longitud de nombre máxima de 100 caracteres
              *      
              */}
-            <form className="mt-1 flex justify-end">
+            <div className="mt-1 flex justify-end">
                 <label htmlFor="name">Firmado por: </label>
                 <input 
                     className="ml-1" 
@@ -79,8 +108,9 @@ function Letter({ setSaveStatus }: LetterStatus) {
                     name="name" 
                     id="name" 
                     placeholder="Escribe tu nombre" 
+                    maxLength={100}
                     required />
-            </form>
+            </div>
         </main>
     );
 
