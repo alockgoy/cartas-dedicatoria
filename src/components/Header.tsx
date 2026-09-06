@@ -1,10 +1,15 @@
 import React, { useState } from "react"; // Importar "useState"
-//import "./Header.css"; // Importar el CSS específico del header
 
-function Header({ title }) {
+/**
+ * Definir los estados del componente
+ *      'guardando' o 'guardado'
+ */
+interface HeaderStatus{
+    title: string;
+    saveStatus: 'guardado' | 'guardando';
+}
 
-    // Crea un estado "nav" que empieza en false y permite cambiarlo con "setNav".
-    const [nav, setNav] = useState(false); 
+function Header({ title, saveStatus }: HeaderStatus) {
 
     return(
 
@@ -34,7 +39,7 @@ function Header({ title }) {
              */}
             <nav className="ml-6">
                 
-                💾 Guardando... / 💾 Guardado
+                {saveStatus === 'guardado' ? '💾 Guardado' : '💾 Guardando...'}
 
             </nav>
         </header>

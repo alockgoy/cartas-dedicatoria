@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"; // Importaciones necesarias
+import React, { useEffect, useState, useRef } from "react"; // Importaciones necesarias
 
 /**
  * Definir los estados del componente
