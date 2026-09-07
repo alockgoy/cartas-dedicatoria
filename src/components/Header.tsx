@@ -20,8 +20,9 @@ function Header({ title, saveStatus }: HeaderStatus) {
                 Márgen izquierdo y derecho de 3 (imagino que %)
                 Márgen superior de 1 (imagino que %)
                 Padding inferior de 2 (imagino que %)
+                Ocultarlo en el panel de impresión
         */
-        <header className="bg-[rgb(141,130,27)] rounded-[45px] mx-3 mt-1 pb-2"> 
+        <header className="print:hidden bg-[rgb(141,130,27)] rounded-[45px] mx-3 mt-1 pb-2"> 
 
             {/*
                 Título 1:

@@ -15,9 +15,10 @@ function Footer() {
                 Justify between para posicionar cada "section" en una esquina
                 Items-center alinea los elementos al centro verticalmente
                 Px-4 para que no sobresalgan del borde de la esquina
+                Ocultarlo en el panel de impresión
 
         */
-        <footer className="bg-[rgb(141,130,27)] rounded-[45px] mx-3 mt-1 pb-2 flex justify-between items-center px-4">
+        <footer className="print:hidden bg-[rgb(141,130,27)] rounded-[45px] mx-3 mt-1 pb-2 flex justify-between items-center px-4">
             <section>© alockgoy</section>
 
             {/* Botón para guardar el PDF*/}
