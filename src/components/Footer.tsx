@@ -18,11 +18,24 @@ function Footer() {
                 Ocultarlo en el panel de impresión
 
         */
-        <footer className="print:hidden bg-[rgb(141,130,27)] rounded-[45px] mx-3 mt-1 pb-2 flex justify-between items-center px-4">
-            <section>© alockgoy</section>
+        <footer className="print:hidden bg-[rgb(141,130,27)] rounded-[45px] mx-3 mt-1 pb-1 flex justify-between items-center px-4">
+            <section className="mt-1">
+                <a href="https://github.com/alockgoy" target="_blank">© alockgoy</a>
+            </section>
 
-            {/* Botón para guardar el PDF*/}
-            <section>🖨 Guardar PDF</section>
+            {/* Botón para guardar el PDF
+                    Bordes redondeados
+                    Reacciona al hover del ratón
+                    Pequeño márgen superior
+            */}
+            <section>
+                <button 
+                onClick={() => window.print()}
+                className="mt-1 rounded-[45px] cursor-pointer hover:bg-black active:scale-95 transition"
+                >
+                  &nbsp;🖨 Guardar PDF&nbsp;
+                </button>
+            </section>
         </footer>
 
     );
