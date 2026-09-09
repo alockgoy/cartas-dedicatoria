@@ -82,9 +82,10 @@ function Letter({ setSaveStatus }: LetterStatus) {
              *      No permite redimensionar el tamaño a mano
              *      Bordes marcados y redondeados
              *      El contenido del texto se guarda y recupera automáticamente del localStorage
+             *      Fuente de letra Patrick Hand
              */}
                 <textarea
-                    className="w-full h-90 resize-none p-4 border rounded-md"
+                    className="w-full h-90 resize-none p-4 border rounded-md font-patrick text-lg"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                 >
@@ -112,9 +113,10 @@ function Letter({ setSaveStatus }: LetterStatus) {
              *      Márgenes superior e izquierdo de 1
              *      Posicionamiento en la derecha
              *      Longitud de nombre máxima de 100 caracteres
+             *      Fuente de letra Patrick Hand
              *      
              */}
-                <div className="mt-1 flex justify-end">
+                <div className="mt-1 flex justify-end font-patrick text-lg">
                     <label htmlFor="signature">Firmado por: </label>
                     <input
                         className="ml-1"

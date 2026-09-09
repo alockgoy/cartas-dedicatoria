@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme{
+  --font-patrick: 'Patrick Hand', cursive;
+}
+
+@font-face {
+  font-family: 'Patrick Hand';
+  src: url('./fonts/Patrick_Hand/PatrickHand-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body {
   background-color: #242424;
   color: #ffffff;
