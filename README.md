@@ -70,3 +70,6 @@ This favicon was generated using the following font:
 - Font Source: https://fonts.gstatic.com/s/leckerlione/v22/V8mCoQH8VCsNttEnxnGQ-1itLZxcBtItFw.ttf
 - Font License: undefined)
 
+La fuente "Patrick Hand" fue obtenida desde Google Fonts:
+- https://fonts.google.com/specimen/Patrick+Hand?query=patrick&preview.script=Latn
+
