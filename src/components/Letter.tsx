@@ -135,7 +135,7 @@ function Letter({ setSaveStatus }: LetterStatus) {
              *  Sección para la impresión
              *      Estilo personalizado: Carta -> firma -> foto
              */}
-            <div className="hidden print:block px-5">
+            <div className="hidden print:block px-5 font-patrick text-2xl">
                 {/**
                  *  Texto de la carta
                  *      Mantiene los espacios y saltos de línea del texto
