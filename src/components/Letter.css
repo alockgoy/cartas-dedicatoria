@@ -1,0 +1,24 @@
+/* Esto me lo hizo una IA, Claude */
+
+.paper-lines{
+    line-height: 1.75rem;
+    background-image: repeating-linear-gradient(
+        to bottom, 
+        transparent 0,
+        transparent calc(1.75rem - 1px),
+        #d8cfae 1.75rem
+    );
+    background-size: 100% 1.75rem;
+    background-attachment: local;
+}
+
+.paper-lines-print {
+  line-height: 2rem;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(2rem - 2px),
+    #b5a97a 2rem
+  );
+  background-size: 100% 2rem;
+}

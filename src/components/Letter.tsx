@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"; // Importaciones necesarias
+import './Letter.css';
 
 /**
  * Definir los estados del componente
@@ -83,9 +84,10 @@ function Letter({ setSaveStatus }: LetterStatus) {
              *      Bordes marcados y redondeados
              *      El contenido del texto se guarda y recupera automáticamente del localStorage
              *      Fuente de letra Patrick Hand
+             *      Estilo CSS personalizado para parecer una carta
              */}
                 <textarea
-                    className="w-full h-90 resize-none p-4 border rounded-md font-patrick text-lg"
+                    className="w-full h-90 resize-none p-7 border rounded-md font-patrick text-lg paper-lines"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                 >
@@ -135,7 +137,7 @@ function Letter({ setSaveStatus }: LetterStatus) {
              *  Sección para la impresión
              *      Estilo personalizado: Carta -> firma -> foto
              */}
-            <div className="hidden print:block px-5 font-patrick text-2xl">
+            <div className="hidden print:block px-5 font-patrick text-2xl paper-lines-print">
                 {/**
                  *  Texto de la carta
                  *      Mantiene los espacios y saltos de línea del texto

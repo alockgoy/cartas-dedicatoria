@@ -16,3 +16,10 @@ body {
   background-color: #242424;
   color: #ffffff;
 }
+
+@media print {
+  body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
