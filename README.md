@@ -28,6 +28,37 @@ Por este motivo, es importante tener en cuenta que el código puede contener:
 
 El objetivo principal de este proyecto no es demostrar que sé utilizar React perfectamente, sino **aprender utilizándolo**.
 
+## 🛠 Cómo clonar y desplegar en cualquier PC
+
+Para clonar y ejecutar este proyecto en cualquier computadora (Linux, Windows o macOS), el usuario necesitará:
+
+### Requisitos previos
+- **Node.js** (recomiendo la última versión disponible) y **npm** (o **pnpm**)
+
+### Pasos para clonar y ejecutar
+
+1. **Clonar el repositorio**:
+   ```bash
+   git clone https://github.com/alockgoy/cartas-cumpleaños.git
+   cd cartas-cumpleaños
+   ```
+
+2. **Instalar dependencias**:
+   ```bash
+   npm install
+   # o con pnpm:
+   pnpm install
+   ```
+
+3. **Desarrollo local**:
+   ```bash
+   npm run dev
+   ```
+   La aplicación estará disponible en `http://localhost:5173`
+
+### Consideraciones
+- **Linux**: Puede pasar (como me pasó a mi) que al ejecutar "apt install ..." no instale la versión más reciente disponible y haya que instalarlo de otra manera.
+
 ## 📚 Un proyecto para aprender
 
 Este repositorio debe entenderse como un **proyecto de práctica**.
