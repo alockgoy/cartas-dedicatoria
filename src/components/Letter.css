@@ -1,12 +1,14 @@
-/* Esto me lo hizo una IA, Claude */
+/* La parte de las líneas que parecen renglones fue hecha por una IA, Claude */
 
 .paper-lines{
     line-height: 1.75rem;
+    background-color: #e8dcb5;
+    color: black;
     background-image: repeating-linear-gradient(
         to bottom, 
         transparent 0,
         transparent calc(1.75rem - 1px),
-        #d8cfae 1.75rem
+        grey 1.75rem
     );
     background-size: 100% 1.75rem;
     background-attachment: local;
@@ -14,11 +16,13 @@
 
 .paper-lines-print {
   line-height: 2rem;
+  background-color: #e8dcb5;
+  color: black;
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0,
     transparent calc(2rem - 2px),
-    #b5a97a 2rem
+    grey 2rem
   );
   background-size: 100% 2rem;
 }

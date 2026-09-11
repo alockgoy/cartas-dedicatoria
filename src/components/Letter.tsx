@@ -136,8 +136,9 @@ function Letter({ setSaveStatus }: LetterStatus) {
             {/**
              *  Sección para la impresión
              *      Estilo personalizado: Carta -> firma -> foto
+             *      Hacer que el aspecto de carta ocupe toda la página del pdf a lo alto
              */}
-            <div className="hidden print:block px-5 font-patrick text-2xl paper-lines-print">
+            <div className="hidden print:block px-5 font-patrick text-2xl paper-lines-print min-h-screen">
                 {/**
                  *  Texto de la carta
                  *      Mantiene los espacios y saltos de línea del texto
