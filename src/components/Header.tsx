@@ -22,7 +22,7 @@ function Header({ title, saveStatus }: HeaderStatus) {
                 Padding inferior de 2 (imagino que %)
                 Ocultarlo en el panel de impresión
         */
-        <header className="print:hidden bg-[rgb(141,130,27)] rounded-[45px] mx-3 mt-1 pb-2"> 
+        <header className="print:hidden  rounded-[45px] mx-3 mt-1 pb-2"> 
 
             {/*
                 Título 1:

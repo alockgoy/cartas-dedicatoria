@@ -18,7 +18,7 @@ function Footer() {
                 Ocultarlo en el panel de impresión
 
         */
-        <footer className="print:hidden bg-[rgb(141,130,27)] rounded-[45px] mx-3 mt-1 pb-1 flex justify-between items-center px-4">
+        <footer className="print:hidden  rounded-[45px] mx-3 mt-1 pb-1 flex justify-between items-center px-4">
             <section className="mt-1">
                 <a href="https://github.com/alockgoy" target="_blank">© alockgoy</a>
             </section>
@@ -31,7 +31,7 @@ function Footer() {
             <section>
                 <button 
                 onClick={() => window.print()}
-                className="mt-1 rounded-[45px] cursor-pointer hover:bg-black active:scale-95 transition"
+                className="mt-1 cursor-pointer bg-[#e8dcb5] hover:bg-[#ddd0a0] active:scale-95 transition text-[#3a3226] px-4 py-2 rounded-[45px] border-2 border-[#3a3226] font-patrick text-lg"
                 >
                   &nbsp;🖨 Guardar PDF&nbsp;
                 </button>
