@@ -1,3 +1,9 @@
+# 📜 Proyecto de carta dedicatoria
+
+Una pequeña aplicación web para crear y personalizar cartas de cumpleaños (o dedicatoria en general).
+
+Licencia: Software Libre
+
 # 🚀 Proyecto React — Práctica y aprendizaje
 
 Este proyecto es una aplicación desarrollada con **React** cuyo principal objetivo es **practicar, experimentar y aprender**.
@@ -72,4 +78,7 @@ This favicon was generated using the following font:
 
 La fuente "Patrick Hand" fue obtenida desde Google Fonts:
 - https://fonts.google.com/specimen/Patrick+Hand?query=patrick&preview.script=Latn
+
+Para la realización de tareas complejas / corregir errores que no lograba encontrar, se ha usado la ayuda de la IA:
+- https://claude.ai/new (Sonnet 5)
 

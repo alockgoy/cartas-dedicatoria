@@ -38,9 +38,9 @@ function Header({ title, saveStatus }: HeaderStatus) {
              *      Cuando se añada el "main", habrá que modificar esta parte
              *      para hacer que el estado varíe, actualmente el "main" no está diseñado
              */}
-            <nav className="ml-6">
+            <nav className={`ml-6 transition ${saveStatus === 'guardando' ? 'text-yellow-400' : 'text-neutral-400'}`}>
                 
-                {saveStatus === 'guardado' ? '💾 Guardado' : '✍ Guardando...'}
+                {saveStatus === 'guardado' ? '💾 Guardado en tu navegador' : '✍ Guardando...'}
 
             </nav>
         </header>
