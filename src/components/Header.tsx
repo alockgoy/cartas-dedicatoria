@@ -18,11 +18,11 @@ function Header({ title, saveStatus }: HeaderStatus) {
                 Color de fondo que no sé cómo se llama
                 Bordes redondeados
                 Márgen izquierdo y derecho de 3 (imagino que %)
-                Márgen superior de 1 (imagino que %)
+                Márgen superior de 5 (imagino que %)
                 Padding inferior de 2 (imagino que %)
                 Ocultarlo en el panel de impresión
         */
-        <header className="print:hidden  rounded-[45px] mx-3 mt-1 pb-2"> 
+        <header className="print:hidden  rounded-[45px] mx-3 mt-5 pb-2"> 
 
             {/*
                 Título 1:
