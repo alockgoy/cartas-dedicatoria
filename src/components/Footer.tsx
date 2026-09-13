@@ -1,6 +1,8 @@
+interface FooterProps {
+    onPrint: () => void;
+}
 
-
-function Footer() {
+function Footer({onPrint}: FooterProps) {
 
     return (
 
@@ -30,7 +32,7 @@ function Footer() {
             */}
             <section>
                 <button 
-                onClick={() => window.print()}
+                onClick={onPrint}
                 className="mt-1 cursor-pointer bg-[#e8dcb5] hover:bg-[#ddd0a0] active:scale-95 transition text-[#3a3226] px-4 py-2 rounded-[45px] border-2 border-[#3a3226] font-patrick text-lg"
                 >
                   &nbsp;🖨 Guardar PDF&nbsp;

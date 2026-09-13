@@ -5,12 +5,14 @@ import sobreCerrado from '../assets/sobre-cerrado.jpg'; // Foto del sobre cerrad
 /**
  * Definir los estados del componente
  *      'guardando' o 'guardado'
+ *      botón de la animación
  */
 interface LetterStatus {
     setSaveStatus: (status: 'guardado' | 'guardando') => void;
+    isClosing: boolean;
 }
 
-function Letter({ setSaveStatus }: LetterStatus) {
+function Letter({ setSaveStatus, isClosing }: LetterStatus) {
 
     // Comprobar si hay algo guardado en localStorage y recuperarlo
     const [text, setText] = useState(() => {
@@ -67,9 +69,6 @@ function Letter({ setSaveStatus }: LetterStatus) {
 
     // Usestate para la foto
     const [photo, setPhoto] = useState<string | null>(null);
-
-    // Usestate para el botón temporal de animación
-    const [isClosing, setIsClosing] = useState(false);
 
     return (
         <>
@@ -163,16 +162,6 @@ function Letter({ setSaveStatus }: LetterStatus) {
                         required />
                 </div>
 
-                {/**
-                *  Botón temporal para la animación del sobre
-                */}
-                <section className="mt-1 text-center hover:bg-black">
-                    <button
-                        onClick={() => setIsClosing(true)}
-                    >
-                        Probar animación
-                    </button>
-                </section>
             </main>
 
             {/**

@@ -12,11 +12,25 @@ function App() {
   // Alternar texto de la cabecera entre "guardando" y "guardado"
   const [saveStatus, setSaveStatus] = useState<'guardado' | 'guardando'>('guardado');
 
+  // Usestate para el botón temporal de animación
+  const [isClosing, setIsClosing] = useState(false);
+
+  function handlePrint(){
+
+    setIsClosing(true);
+
+    // Esperar a terminar la animación antes de imprimir
+    setTimeout (() => {
+      window.print();
+    }, 2500);
+
+  }
+
   return (
     <>
       <Header title="Cartas" saveStatus={saveStatus} />
-      <Letter setSaveStatus={setSaveStatus} />
-      <Footer />
+      <Letter setSaveStatus={setSaveStatus} isClosing={isClosing} />
+      <Footer onPrint={handlePrint} />
     </>
   )
 }
