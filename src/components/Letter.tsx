@@ -94,7 +94,7 @@ function Letter({ setSaveStatus, isClosing }: LetterStatus) {
                     *      "transition-all duration-700" hace que el cambio dure 700ms de forma suave,
                     *      en vez de ser un salto instantáneo
                     */}
-                    <div className={`transition-all duration-700 ${isClosing ? 'scale-50 opacity-0' : 'scale-100 opacity-100'}`}>
+                    <div className={`transition-all duration-700 ${isClosing ? 'scale-50 opacity-0' : 'delay-1500 scale-100 opacity-100'}`}>
                         {/** TextArea
                         *      Ocupa todo el ancho posible
                         *      No permite redimensionar el tamaño a mano

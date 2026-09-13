@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 // import heroImg from './assets/hero.png'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
@@ -25,6 +25,21 @@ function App() {
     }, 2500);
 
   }
+
+  // Revertir la animación cuando se cierra el diálogo de impresión
+  useEffect(() => {
+    
+    // Establecer en "falso" el estado de "isClosing"
+    function handleAfterPrint(){
+      setIsClosing(false);
+    }
+
+    // Añadir la escucha
+    window.addEventListener('afterprint', handleAfterPrint);
+
+    // Eliminar la escucha una vez realizada su función
+    return () => window.removeEventListener('afterprint', handleAfterPrint);
+  }, []);
 
   return (
     <>
