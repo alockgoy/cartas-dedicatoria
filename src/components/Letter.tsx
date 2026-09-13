@@ -36,6 +36,9 @@ function Letter({ setSaveStatus, isClosing }: LetterStatus) {
     // Comprobar que el archivo subido sea una foto
     const [photoError, setPhotoError] = useState('');
 
+    // Para mantener el indicador de que hay un archivo subido en el input
+    const [photoName, setPhotoName] = useState('');
+
     function verifyPhoto(e: React.ChangeEvent<HTMLInputElement>) {
 
         // Obtener el archivo subido al input
@@ -55,6 +58,9 @@ function Letter({ setSaveStatus, isClosing }: LetterStatus) {
 
         // Si no se han cumplido las condiciones anteriores, es que SÍ se ha subido una foto
         setPhotoError('');
+
+        // Conservar el nombre del archivo
+        setPhotoName(file.name);
 
         // Convertir el archivo a base64 para poder mostrarlo en la impresión
         const reader = new FileReader();
@@ -128,13 +134,34 @@ function Letter({ setSaveStatus, isClosing }: LetterStatus) {
              *      Márgen superior de 1
              *      Posicionamiento a la izquierda
              *      Mensaje de error si el archivo subido NO es una foto
+             *      Oculto visualmente pero funcional
              */}
-                <div className="mt-1 flex justify-start">
+                <div className="mt-1 flex flex-col items-start">
                     <input
+                        id="photo-upload"
                         type="file"
                         accept="image/*"
                         onChange={verifyPhoto}
+                        className="hidden"
                     />
+
+                    {/**
+                     *  Botón visualmente agradable
+                     *      Label vinculado al input que actúa como si fuera el botón
+                     */}
+                    <label 
+                        htmlFor="photo-upload"
+                        className="cursor-pointer bg-[#e8dcb5] hover:bg-[#ddd0a0] active:scale-95 transition text-[#3a3226] px-4 py-2 rounded-md border-2 border-[#3a3226] font-patrick text-lg"
+                        >
+                        📷 Elegir foto
+                    </label>
+
+                    {/** Mostrar el nombre del archivo */}
+                    {photoName && !photoError &&(
+                        <p className="text-sm mt-1 ml-1 text-neutral-400">✓ {photoName}</p>
+                    )}
+
+                    {/** Mensaje de error por si el archivo subido NO es una foto */}
                     {photoError && (
                         <p className="text-red-600 text-sm mt-1 ml-1">{photoError}</p>
                     )}
