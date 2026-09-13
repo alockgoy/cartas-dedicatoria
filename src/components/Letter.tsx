@@ -67,9 +67,12 @@ function Letter({ setSaveStatus }: LetterStatus) {
     // Usestate para la foto
     const [photo, setPhoto] = useState<string | null>(null);
 
+    // Usestate para el botón temporal de animación
+    const [isClosing, setIsClosing] = useState(false);
+
     return (
         <>
-        {/**
+            {/**
             * Sección principal
             *      Elementos alineados al centro
             *      Márgen superior de 2
@@ -77,21 +80,63 @@ function Letter({ setSaveStatus }: LetterStatus) {
             *      Márgenes laterales
             */}
             <main className="print:hidden text-center mt-2 mb-2 px-5">
+                {/**
+                *  Contenedor relativo:
+                *      Sirve de referencia de posición para el sobre,
+                *      que se coloca "absolute" respecto a este div (no respecto a toda la página)
+                */}
+                <div className="relative">
+                    {/**
+                    *  Contenedor del textarea:
+                    *      Controla la animación de "encogerse y desvanecerse"
+                    *      Cuando isClosing es true, pasa de tamaño/opacidad normales (100%)
+                    *      a la mitad de tamaño y totalmente transparente (scale-50 opacity-0)
+                    *      "transition-all duration-700" hace que el cambio dure 700ms de forma suave,
+                    *      en vez de ser un salto instantáneo
+                    */}
+                    <div className={`transition-all duration-700 ${isClosing ? 'scale-50 opacity-0' : 'scale-100 opacity-100'}`}>
+                        {/** TextArea
+                        *      Ocupa todo el ancho posible
+                        *      No permite redimensionar el tamaño a mano
+                        *      Bordes marcados y redondeados
+                        *      El contenido del texto se guarda y recupera automáticamente del localStorage
+                        *      Fuente de letra Patrick Hand
+                        *      Estilo CSS personalizado para parecer una carta
+                        */}
+                        <textarea
+                            className="w-full h-90 resize-none p-7 border rounded-md font-patrick text-lg paper-lines"
+                            value={text}
+                            onChange={(e) => setText(e.target.value)}
+                        >
+                        </textarea>
+                    </div>
 
-                {/** TextArea
-             *      Ocupa todo el ancho posible
-             *      No permite redimensionar el tamaño a mano
-             *      Bordes marcados y redondeados
-             *      El contenido del texto se guarda y recupera automáticamente del localStorage
-             *      Fuente de letra Patrick Hand
-             *      Estilo CSS personalizado para parecer una carta
-             */}
-                <textarea
-                    className="w-full h-90 resize-none p-7 border rounded-md font-patrick text-lg paper-lines"
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                >
-                </textarea>
+                    {/**
+                    *  Animación de cerrar el sobre:
+                    *      "absolute inset-0" hace que este div ocupe exactamente el mismo espacio
+                    *      que el contenedor "relative" de arriba (mismo ancho/alto, superpuesto),
+                    *      en vez de aparecer debajo del textarea en el flujo normal de la página
+                    *
+                    *      "delay-700" espera a que termine la animación del textarea (700ms)
+                    *      antes de empezar la suya propia, para que las dos animaciones
+                    *      ocurran en secuencia y no a la vez
+                    *
+                    *      Cuando isClosing es true: se hace visible (opacity-100) y recupera
+                    *      su tamaño normal (scale-100), con un ligero efecto de "crecer un poco
+                    *      mientras aparece" (viene de scale-90)
+                    *
+                    *      "pointer-events-none" mientras está oculto evita que se pueda
+                    *      hacer clic en él sin querer cuando todavía es invisible
+                    */}
+                    <div className={`absolute inset-0 transition-all duration-700 delay-700 ${isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'} 
+                                    bg-[#e8dcb5] border-2 border-[#3a3226] rounded-md flex items-center justify-center font-patrick text-2xl`}
+                    >
+                        💌 Sobre cerrado
+                    </div>
+                </div>
+
+
+
 
                 {/**
              *  Input para la foto
@@ -131,6 +176,17 @@ function Letter({ setSaveStatus }: LetterStatus) {
                         onChange={(e) => setSignature(e.target.value)}
                         required />
                 </div>
+
+                {/**
+                *  Botón temporal para la animación del sobre
+                */}
+                <section className="mt-1 text-center hover:bg-black">
+                    <button
+                        onClick={() => setIsClosing(true)}
+                    >
+                        Probar animación
+                    </button>
+                </section>
             </main>
 
             {/**
@@ -151,7 +207,7 @@ function Letter({ setSaveStatus }: LetterStatus) {
                  *      Situada al fondo a la derecha
                  */}
                 {signature && (
-                    <p className="text-right mt-8">Firmado por: {signature}</p>   
+                    <p className="text-right mt-8">Firmado por: {signature}</p>
                 )}
 
                 {/**
