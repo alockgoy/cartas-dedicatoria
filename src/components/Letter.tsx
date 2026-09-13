@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"; // Importaciones necesarias
-import './Letter.css';
+import './Letter.css'; // Archivo css específico del componente
+import sobreCerrado from '../assets/sobre-cerrado.jpg'; // Foto del sobre cerrado
 
 /**
  * Definir los estados del componente
@@ -112,31 +113,16 @@ function Letter({ setSaveStatus }: LetterStatus) {
                     </div>
 
                     {/**
-                    *  Animación de cerrar el sobre:
-                    *      "absolute inset-0" hace que este div ocupe exactamente el mismo espacio
-                    *      que el contenedor "relative" de arriba (mismo ancho/alto, superpuesto),
-                    *      en vez de aparecer debajo del textarea en el flujo normal de la página
-                    *
-                    *      "delay-700" espera a que termine la animación del textarea (700ms)
-                    *      antes de empezar la suya propia, para que las dos animaciones
-                    *      ocurran en secuencia y no a la vez
-                    *
-                    *      Cuando isClosing es true: se hace visible (opacity-100) y recupera
-                    *      su tamaño normal (scale-100), con un ligero efecto de "crecer un poco
-                    *      mientras aparece" (viene de scale-90)
-                    *
-                    *      "pointer-events-none" mientras está oculto evita que se pueda
-                    *      hacer clic en él sin querer cuando todavía es invisible
+                    *  Imagen del sobre cerrado:
+                    *      La animación se ha hecho en el archivo css específico de este componente
                     */}
-                    <div className={`absolute inset-0 transition-all duration-700 delay-700 ${isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'} 
-                                    bg-[#e8dcb5] border-2 border-[#3a3226] rounded-md flex items-center justify-center font-patrick text-2xl`}
-                    >
-                        💌 Sobre cerrado
-                    </div>
+                    <img
+                        src={sobreCerrado}
+                        alt="Sobre cerrado"
+                        className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 delay-700 ${isClosing ? 'opacity-100 scale-100 sobre-wobble' : 'opacity-0 scale-50 pointer-events-none'
+                            }`}
+                    />
                 </div>
-
-
-
 
                 {/**
              *  Input para la foto

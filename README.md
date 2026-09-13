@@ -113,3 +113,4 @@ La fuente "Patrick Hand" fue obtenida desde Google Fonts:
 Para la realización de tareas complejas / corregir errores que no lograba encontrar, se ha usado la ayuda de la IA:
 - https://claude.ai/new (Sonnet 5)
 
+La imagen del sobre cerrado fue generada con Google Gemini

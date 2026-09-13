@@ -1,4 +1,4 @@
-/* La parte de las líneas que parecen renglones fue hecha por una IA, Claude */
+/* Este CSS fue desarrollado por una IA, Claude */
 
 .paper-lines{
     line-height: 1.75rem;
@@ -25,4 +25,29 @@
     grey 2rem
   );
   background-size: 100% 2rem;
+}
+
+/* 
+  Define la secuencia de inclinación:
+  0%   -> sin rotación (posición normal)
+  30%  -> gira ligeramente hacia la izquierda
+  60%  -> rebota un poco hacia la derecha (efecto más natural que volver en seco)
+  100% -> vuelve a su posición original, sin rotación
+*/
+@keyframes sobre-wobble {
+  0% { transform: rotate(0deg); }
+  30% { transform: rotate(-6deg); }
+  60% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* 
+  Aplica la animación anterior una sola vez ("ease-out" = empieza rápido, termina suave)
+  "animation-delay" espera a que el sobre ya haya terminado de aparecer
+  (700ms de espera del textarea + 500ms de duración del fundido de aparición = 1.2s)
+  antes de empezar a inclinarse
+*/
+.sobre-wobble {
+  animation: sobre-wobble 0.5s ease-out;
+  animation-delay: 1.2s;
 }
