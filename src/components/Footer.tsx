@@ -22,7 +22,7 @@ function Footer({onPrint}: FooterProps) {
         */
         <footer className="print:hidden  rounded-[45px] mx-3 mt-1 pb-1 flex justify-between items-center px-4">
             <section className="mt-1">
-                <a href="https://github.com/alockgoy" target="_blank">© alockgoy</a>
+                <a href="https://github.com/aloxvim" target="_blank">© aloxvim</a>
             </section>
 
             {/* Botón para guardar el PDF

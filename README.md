@@ -39,7 +39,7 @@ Para clonar y ejecutar este proyecto en cualquier computadora (Linux, Windows o 
 
 1. **Clonar el repositorio**:
    ```bash
-   git clone https://github.com/alockgoy/cartas-dedicatoria.git
+   git clone https://github.com/aloxvim/cartas-dedicatoria.git
    cd cartas-dedicatoria
    ```
 
